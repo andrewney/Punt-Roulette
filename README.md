@@ -49,7 +49,7 @@ Definitions:
 | Total  | 521             | 364         | 227            | 285          | $3,530  |
 
 
-CHART
+![Screenshot 2022-01-03 110233](https://user-images.githubusercontent.com/96963289/147952840-5cf1c5b4-42e1-4114-b1ce-0b97f275d909.jpg)
 
 
 ## Data Source
