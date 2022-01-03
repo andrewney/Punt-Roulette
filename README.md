@@ -1,14 +1,14 @@
 # Punt-Roulette
 
 ## Overview
-Punt Roulette is a data analysis project to create a predictive model for the outcome of NFL drives - specifically punts.      
+Punt Roulette is a data analysis project to create a predictive model for the outcome of NFL drives - specifically whether a punt will occur or not.      
 
 ## Data Analysis Method
-The dataset I used from nflfastR, provides datapoints from every NFL play dating back to 1999, but the NFL moved the starting yardline following a touchback to the 25 yardline following the 2017 season.  Consequently, I used data from the 2018-2020 season as the data train and 2021 data for the data test in the logistic regression.  But since the data on each NFL play came with 400+ data points, it was necessary to narrow down to find which would be the best predictive variables for a punt.  To selecting predictive variables, I used a k-fold validation which runs a generalized linear regression and ranks the predictive variables by how much they influence the accuracy to predict a punt, in this case.  I used a combination of personal football intutiton as well as popular literature on regression models of the NFL for my initial list of predictive variables.
+The dataset I used from nflfastR, provides datapoints from every NFL play dating back to 1999.  Since the NFL moved the starting yardline following a touchback to the 25 yardline following the 2017 season, only seasons from 2018 on were relevant.  I used data from the 2018-2020 season as the data train and the data from the 2021 season for the data test in the logistic regression.  Beacuse the data set came with 400+ data points on each NFL play, it was necessary to narrow down to find which would be the best predictive variables for the occurrance of a punt.  To selecting predictive variables, I used a k-fold validation which runs a generalized linear regression and ranks the predictive variables by how much they influence the modle's accuracy, in this case the accuracy to predict a punt.  I used a combination of personal football intutiton as well as popular literature on regression models of the NFL for my initial list of predictive variables.  From there the k-fold validation showed which variables should be 
 
 
 ## Predictive Variables Used
-Of all the predictive variables tried, these were the only ones that had a significant impact on the model's ability to predict a punt
+The following are the predictive variables that most contributed to the model's ability to accuracte predict whether a punt will occur or not:
 - The win probability (as calculated by a sports book) of the team with the ball
 - The yardline that the drive begins on
 - The spread on the game (as calculated by a sports book)
@@ -28,6 +28,7 @@ Definitions:
 - correct_punt: Model correctly predicted a punt
 - profit: Profit if a wager was placed $110 to win $100 each time the model predicted a punt
 
+### Punt Roulette Weekly Performance
 |        | correct_no_punt | missed_punt | incorrect_punt | correct_punt | profit  |
 |--------|-----------------|-------------|----------------|--------------|---------|
 | week1  | 50              | 21          | 12             | 22           | $880    |
