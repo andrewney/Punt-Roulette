@@ -4,12 +4,18 @@
 Punt Roulette is a data analysis project to create a predictive model for the outcome of NFL drives - specifically punts.      
 
 ## Data Analysis Method
+The dataset I used from nflfastR, provides datapoints from every NFL play dating back to 1999, but the NFL moved the starting yardline following a touchback to the 25 yardline following the 2017 season.  Consequently, I used data from the 2018-2020 season as the data train and 2021 data for the data test in the logistic regression.  But since the data on each NFL play came with 400+ data points, it was necessary to narrow down to find which would be the best predictive variables for a punt.  To selecting predictive variables, I used a k-fold validation which runs a generalized linear regression and ranks the predictive variables by how much they influence the accuracy to predict a punt, in this case.  I used a combination of personal football intutiton as well as popular literature on regression models of the NFL for my initial list of predictive variables.
 
-## Inputs Used
 
-## Inputs Unused
+## Predictive Variables Used
+Of all the predictive variables tried, these were the only ones that had a significant impact on the model's ability to predict a punt
+- The win probability (as calculated by a sports book) of the team with the ball
+- The yardline that the drive begins on
+- The spread on the game (as calculated by a sports book)
+- The over/ under on the game (as calculated by a sports book)
+- The offense's passing efficiency
+- The defense's passing efficiency
 
-## Filters 
 
 ## Results: Weeks 1-16
 
